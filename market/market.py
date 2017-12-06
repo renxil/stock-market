@@ -16,7 +16,7 @@ print(data.head())
 print(data.head(-5))
 # print(data.shape)
 
-ax1 = plt.subplot(211)
+ax1 = plt.subplot(311)
 t1 = np.arange(630)
 
 #reverse the data
@@ -29,7 +29,12 @@ plt.plot(t1, data.low[::-1], label="min")
 #plt.xlim(1,10)
 leg = plt.legend(loc='upper left', ncol=4, mode="expand", shadow=True, fancybox=True)
 leg.get_frame().set_alpha(0.5)
-ax2 = plt.subplot(212)
+ax2 = plt.subplot(312)
 plt.bar(t1,data.volume[::-1],label="volume")
 
+ax3 = plt.subplot(313)
+plt.scatter(data.open[::-1],data.close[::-1])
 plt.show()
+
+
+
